@@ -9,6 +9,7 @@ class Program
 {
     public static void Main(string[] args)
     {
+
         EnemiesList lista = new EnemiesList();
         lista.ListEnemies();
         Console.WriteLine("Qual atributo você deseja usar para ordenar?");
@@ -25,7 +26,7 @@ class Program
             6 => e => e.GetLevel()
         };
         Console.WriteLine("Qual algoritmo deseja usar?");
-        Console.WriteLine("1 - Bubble Sort\n2 - Selection Sort\n3 - Insertion Sort\n4 - Shell Sort");
+        Console.WriteLine("1 - Bubble Sort\n2 - Selection Sort\n3 - Insertion Sort\n4 - Shell Sort\n5 - Quick Sort\n6 - Merge Sort\n7 - Heap Sort");
         int sortChoice = int.Parse(Console.ReadLine());
 
         Console.WriteLine("\nAntes da ordenação:");
@@ -44,6 +45,15 @@ class Program
                 break;
             case 4:
                 Sorters.ShellSort(lista.enemieslist, selector);
+                break;
+            case 5:
+                Sorters.QuickSort(lista.enemieslist, selector);
+                break;
+            case 6:
+                Sorters.MergeSort(lista.enemieslist, selector);
+                break;
+            case 7:
+                Sorters.HeapSort(lista.enemieslist, selector);
                 break;
         }
 
